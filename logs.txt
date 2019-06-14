@@ -1,0 +1,12 @@
+Функция md5_generator 
+Время запуска функции: 2019-06-12 21:36:01.016226; 
+Аргументы: 'countries.json'; 
+Возвращаемое значение: <generator object md5_generator at 0x104da7e58>.
+Функция md5_generator 
+Время запуска функции: 2019-06-12 21:36:34.378429; 
+Аргументы: 'countries.json'; 
+Возвращаемое значение: <generator object md5_generator at 0x1096b1ed0>.
+Функция md5_generator 
+Время запуска функции: 2019-06-14 11:19:07.303704; 
+Аргументы: 'countries.json'; 
+Возвращаемое значение: <generator object md5_generator at 0x104bb3e58>.

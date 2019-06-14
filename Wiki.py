@@ -2,6 +2,7 @@
 # Записывает в файл пару: страна – ссылка.
 
 import json
+from Decorators.Logger import path_log
 
 class Country_iter:
     def __init__(self, path):
@@ -16,16 +17,16 @@ class Country_iter:
     def __next__(self):
         self.cursor += 1
         if self.cursor < len(self.country_list):
-          with open('wiki_links.txt', 'a') as file:
-            file.write(f'{self.country_list[self.cursor]} - https://en.wikipedia.org/wiki/{self.country_list[self.cursor].replace(" ", "_")}\n')
+            with open('wiki_links.txt', 'a') as file:
+                file.write(f'{self.country_list[self.cursor]} - https://en.wikipedia.org/wiki/{self.country_list[self.cursor].replace(" ", "_")}\n')
         else:
-          raise StopIteration
+            raise StopIteration
         return self.cursor
 
 
 countries = Country_iter('countries.json')
 for country in countries:
-  pass
+    pass
 
 # Задача 2. Написать генератор, который принимает путь к файлу.
 # При каждой итерации возвращает md5 хеш каждой строки файла.
@@ -33,6 +34,7 @@ for country in countries:
 
 import hashlib
 
+@path_log('logs.txt')
 def md5_generator(path):
     with open(path, 'rb') as file:
         strings = file.readlines()
